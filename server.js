@@ -101,7 +101,7 @@ function serveFile(reqPath, res) {
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
 
-  if (url.pathname === "/api/waitlist" && req.method === "POST") {
+  if ((url.pathname === "/api/waitlist" || url.pathname === "/waitlist") && req.method === "POST") {
     try {
       const raw = await parseBody(req);
       const body = JSON.parse(raw || "{}");
