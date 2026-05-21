@@ -24,28 +24,13 @@ if (slidePanels.length) {
 }
 
 if (signupForm) {
-  signupForm.addEventListener("submit", async (event) => {
+  signupForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const email = String(new FormData(signupForm).get("email") || "").trim();
 
-    try {
-      const response = await fetch("/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await response.json();
-
-      if (!response.ok) {
-        formStatus.textContent = data.error || "Something went wrong. Try again.";
-        return;
-      }
-
-      formStatus.textContent = `${email} is on the first-drop list.`;
-      signupForm.reset();
-    } catch (_error) {
-      formStatus.textContent = "Network error. Make sure the local server is running.";
-    }
+    window.localStorage.setItem("court-and-stitch-waitlist-email", email);
+    formStatus.textContent = `${email} is on the first-drop list.`;
+    signupForm.reset();
   });
 }
 
