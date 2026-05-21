@@ -2,7 +2,8 @@
   "name": "court-and-stitch-landing",
   "version": "1.0.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
-    "dev": "node local-server.js"
+    "dev": "node server.js"
   }
 }

@@ -1,15 +1,25 @@
 {
+  "functions": {
+    "server.js": {
+      "includeFiles": [
+        "index.html",
+        "styles.css",
+        "script.js",
+        "public/**"
+      ]
+    }
+  },
   "routes": [
     {
       "src": "/api/waitlist",
-      "dest": "/api/waitlist.js"
+      "dest": "/server.js"
     },
     {
       "handle": "filesystem"
     },
     {
       "src": "/.*",
-      "dest": "/index.html"
+      "dest": "/server.js"
     }
   ]
 }
