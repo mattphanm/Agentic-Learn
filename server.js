@@ -63,7 +63,8 @@ function appendEmailRow(email) {
 
 function serveFile(reqPath, res) {
   const safePath = path.normalize(reqPath).replace(/^(\.\.(\/|\\|$))+/, "");
-  const filePath = path.join(ROOT, safePath === "/" ? "index.html" : safePath);
+  const relativePath = safePath === "/" ? "index.html" : safePath.replace(/^\/+/, "");
+  const filePath = path.join(ROOT, relativePath);
 
   if (!filePath.startsWith(ROOT)) {
     sendJson(res, 403, { error: "Forbidden" });
@@ -72,7 +73,22 @@ function serveFile(reqPath, res) {
 
   fs.readFile(filePath, (err, file) => {
     if (err) {
-      sendJson(res, 404, { error: "Not found" });
+      const publicFilePath = path.join(ROOT, "public", relativePath);
+      if (!publicFilePath.startsWith(path.join(ROOT, "public"))) {
+        sendJson(res, 403, { error: "Forbidden" });
+        return;
+      }
+
+      fs.readFile(publicFilePath, (publicErr, publicFile) => {
+        if (publicErr) {
+          sendJson(res, 404, { error: "Not found" });
+          return;
+        }
+
+        const publicExt = path.extname(publicFilePath).toLowerCase();
+        res.writeHead(200, { "Content-Type": MIME[publicExt] || "application/octet-stream" });
+        res.end(publicFile);
+      });
       return;
     }
 

@@ -1,0 +1,15 @@
+{
+  "routes": [
+    {
+      "src": "/api/waitlist",
+      "dest": "/api/waitlist.js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ]
+}
