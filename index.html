@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Court &amp; Stitch | First Drop</title>
+    <meta
+      name="description"
+      content="Court & Stitch is a disciplined athletic streetwear concept preparing its first drop."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-reveal>
+      <a class="brand-mark" href="#top" aria-label="Court & Stitch home">
+        <img class="brand-logo" src="public/logo-transparent.png" alt="">
+        <span>Court &amp; Stitch</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#who">Who We Are</a>
+        <a href="#hero-slideshow">Mockups</a>
+        <a href="#first-drop">First Drop</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Built for the court. Stitched for the streets.</p>
+          <h1>Court &amp; Stitch</h1>
+          <p>
+            A monochrome athletic streetwear label shaping its first capsule with people who care
+            about discipline, fit, and quiet identity.
+          </p>
+          <a class="button" href="#first-drop">Be first to know</a>
+        </div>
+        <div class="hero-slideshow" id="hero-slideshow" aria-label="Court & Stitch mockup slideshow" data-reveal>
+          <div class="mockup-stage">
+            <article class="mockup-panel is-active" data-slide="0">
+              <img src="public/image.png" alt="Vintage oversized tee Court & Stitch mockup">
+              <div>
+                <span>01 / Oversized Tee</span>
+                <h2>Washed black heavyweight tee.</h2>
+              </div>
+            </article>
+            <article class="mockup-panel" data-slide="1">
+              <img src="public/sweat-shorts.png" alt="Vintage sweat shorts Court & Stitch mockup">
+              <div>
+                <span>02 / Sweat Shorts</span>
+                <h2>Relaxed shorts with C&amp;S detail.</h2>
+              </div>
+            </article>
+            <article class="mockup-panel" data-slide="2">
+              <img src="public/cutoff-hoodie.png" alt="Thermal lined cutoff hoodie Court & Stitch mockup">
+              <div>
+                <span>03 / Cutoff Hoodie</span>
+                <h2>Raw thermal-lined training layer.</h2>
+              </div>
+            </article>
+            <article class="mockup-panel" data-slide="3">
+              <img src="public/raglan-crewneck.png" alt="Vintage raglan crewneck Court & Stitch mockup">
+              <div>
+                <span>04 / Raglan Crewneck</span>
+                <h2>Cream raglan with tonal embroidery.</h2>
+              </div>
+            </article>
+            <div class="slide-meter" aria-hidden="true">
+              <span class="is-active"></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro" id="who">
+        <div class="intro-logo" data-reveal aria-hidden="true">
+          <img src="public/logo-transparent.png" alt="">
+        </div>
+        <div class="intro-copy" data-reveal>
+          <p class="eyebrow">Who We Are</p>
+          <h2>Performance shape. Street-level restraint.</h2>
+          <p>
+            Court &amp; Stitch is built around premium athletic staples with a worn-in edge:
+            heavyweight cotton, vintage washes, sharp proportions, and a logo system that stays
+            disciplined instead of loud.
+          </p>
+        </div>
+      </section>
+
+      <section class="signup" id="first-drop" data-reveal>
+        <p class="eyebrow">First Drop</p>
+        <h2>Be the first to know.</h2>
+        <p>
+          Enter your email to keep up with the first Court &amp; Stitch drop, early mockup votes,
+          and release timing.
+        </p>
+        <form class="signup-form">
+          <label for="email">Email address</label>
+          <div>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            <button class="button" type="submit">Join the list</button>
+          </div>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Court &amp; Stitch</span>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
